@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 21:41:09 by jfrancis          #+#    #+#             */
-/*   Updated: 2021/08/05 00:55:17 by user42           ###   ########.fr       */
+/*   Updated: 2021/10/30 19:04:53 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdio.h>
+# include <fcntl.h>
 
 int			get_next_line(int fd, char **line);
 void		*ft_memset(void *b, int c, size_t n);

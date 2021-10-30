@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 03:14:57 by jfrancis          #+#    #+#             */
-/*   Updated: 2021/10/30 19:35:09 by coder            ###   ########.fr       */
+/*   Created: 2021/10/10 03:12:10 by jfrancis          #+#    #+#             */
+/*   Updated: 2021/10/30 19:33:16 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/mandatory/pipex.h"
+#ifndef PIPEX_H
+# define PIPEX_H
 
-int main(int argc, char **argv)
-{
-	t_pipe	pipeline;
+# include "../../libs/libft/libft.h"
 
-	init_pipeline(&pipeline);
-	if (argc < 5)
-		print_error(1);
-	if (argc > 5)
-		print_error(2);
+typedef struct s_pipe {
+	int	infile;
+	int	outfile;
+}						t_pipe;
 
-	pipeline.infile = try_open_file(argv[1], O_RDONLY);
-	close(pipeline.infile);
-	return (0);
-}
+void	init_pipeline(t_pipe *pipeline);
+void	print_error(int id_error);
+int		try_open_file(char *filename, int flags);
+
+#endif

@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfrancis <jfrancis@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 03:12:10 by jfrancis          #+#    #+#             */
-/*   Updated: 2021/10/10 03:16:58 by jfrancis         ###   ########.fr       */
+/*   Created: 2021/10/30 19:28:44 by coder             #+#    #+#             */
+/*   Updated: 2021/10/30 19:32:35 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "../../includes/mandatory/pipex.h"
 
-# include "../libs/libft/libft.h"
-
-#endif
+void	init_pipeline(t_pipe *pipeline)
+{
+	pipeline->infile = 0;
+	pipeline->outfile = 0;
+}
