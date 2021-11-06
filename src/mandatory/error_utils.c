@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jfrancis <jfrancis@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 02:15:00 by jfrancis          #+#    #+#             */
-/*   Updated: 2021/10/30 19:33:41 by coder            ###   ########.fr       */
+/*   Updated: 2021/11/06 02:51:11 by jfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,13 @@ void	print_error(int id_error)
 		error_msg = "Too few arguments";
 	else if (id_error == 2)
 		error_msg = "Too many arguments";
-	ft_putstr_fd(error_msg, 1);
-	write(1, "\n", 1);
+	else if (id_error == 3)
+		error_msg = "Error while creating pipe";
+	else if (id_error == 4)
+		error_msg = "Error while opening file";
+		else if (id_error == 4)
+		error_msg = "Error while forking around";
+	ft_putstr_fd(error_msg, 2);
+	write(2, "\n", 1);
 	exit(EXIT_FAILURE);
-}
-
-int	try_open_file(char *filename, int flags)
-{
-	int	file_fd;
-
-	file_fd = open(filename, flags);
-	if (file_fd < 0)
-		perror(filename);
-	return (file_fd);
 }
