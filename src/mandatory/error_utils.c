@@ -6,7 +6,7 @@
 /*   By: jfrancis <jfrancis@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 02:15:00 by jfrancis          #+#    #+#             */
-/*   Updated: 2021/11/06 02:51:11 by jfrancis         ###   ########.fr       */
+/*   Updated: 2021/11/07 00:32:50 by jfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	print_error(int id_error)
 		error_msg = "Error while creating pipe";
 	else if (id_error == 4)
 		error_msg = "Error while opening file";
-		else if (id_error == 4)
+	else if (id_error == 4)
 		error_msg = "Error while forking around";
 	ft_putstr_fd(error_msg, 2);
 	write(2, "\n", 1);

@@ -9,7 +9,7 @@ OBJECTS = $(SRC:%.c=%.o)
 SRC_ALL = $(addprefix ./src/mandatory/, $(FILES))
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 all: $(NAME)
 
