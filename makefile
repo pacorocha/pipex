@@ -3,7 +3,7 @@ LIBFT = libft.a
 
 LIBFT_PATH = ./libs/libft/
 INCLUDES = -I ./includes
-FILES = pipex.c pipex_utils.c error_utils.c
+FILES = pipex.c pipex_utils.c error_utils.c pipex_processes.c
 SRC = $(FILES)
 OBJECTS = $(SRC:%.c=%.o)
 SRC_ALL = $(addprefix ./src/mandatory/, $(FILES))
