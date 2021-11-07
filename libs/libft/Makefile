@@ -6,7 +6,7 @@
 #    By: jfrancis <jfrancis@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/10 23:26:54 by jfrancis          #+#    #+#              #
-#    Updated: 2021/09/23 03:37:37 by jfrancis         ###   ########.fr        #
+#    Updated: 2021/11/07 18:41:07 by jfrancis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_atoi.c ft_isalpha.c ft_isdigit.c \
 ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c ft_calloc.c \
 ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-be_positive.c num_size.c ft_utoa.c get_next_line.c
+be_positive.c num_size.c ft_utoa.c get_next_line.c ft_append_str.c
 OBJS = $(FILES:.c=.o)
 RM = rm -f
 
