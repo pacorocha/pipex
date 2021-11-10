@@ -3,13 +3,14 @@ LIBFT = libft.a
 
 LIBFT_PATH = ./libs/libft/
 INCLUDES = -I ./includes
-FILES = pipex.c pipex_utils.c error_utils.c pipex_cmds_handler.c
+FILES = pipex.c pipex_utils.c error_utils.c pipex_cmds_handler.c \
+		pipex_processes.c pipex_process_utils.c
 SRC = $(FILES)
 OBJECTS = $(SRC:%.c=%.o)
 SRC_ALL = $(addprefix ./src/mandatory/, $(FILES))
 
 CC = clang
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
 
