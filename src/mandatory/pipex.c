@@ -6,7 +6,7 @@
 /*   By: jfrancis <jfrancis@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 03:14:57 by jfrancis          #+#    #+#             */
-/*   Updated: 2021/11/11 04:00:56 by jfrancis         ###   ########.fr       */
+/*   Updated: 2021/11/11 20:40:40 by jfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv, char **envp)
 {
 	t_pipe	pipeline;
 
-	init_pipeline(argc, argv, envp, &pipeline);
+	init_pipeline(argc, argv, &pipeline);
 	pipeline.paths = get_path_var(envp);
 	pipeline.p_cmds = ft_split(pipeline.paths, ':');
 	pipex_fork(argv, envp, &pipeline);

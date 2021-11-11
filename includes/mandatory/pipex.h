@@ -6,7 +6,7 @@
 /*   By: jfrancis <jfrancis@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 03:12:10 by jfrancis          #+#    #+#             */
-/*   Updated: 2021/11/11 04:01:50 by jfrancis         ###   ########.fr       */
+/*   Updated: 2021/11/11 20:40:15 by jfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_pipe {
 }						t_pipe;
 
 void	print_error(int id_error);
-void	init_pipeline(int argc, char **argv, char **envp, t_pipe *pipeline);
+void	init_pipeline(int argc, char **argv, t_pipe *pipeline);
 char	*get_path_var(char **envp);
 void	close_pipes(t_pipe *pipeline);
 void	pipex_fork(char **argv, char **envp, t_pipe *pipeline);

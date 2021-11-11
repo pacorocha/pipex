@@ -6,13 +6,13 @@
 /*   By: jfrancis <jfrancis@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/30 19:28:44 by coder             #+#    #+#             */
-/*   Updated: 2021/11/11 03:44:55 by jfrancis         ###   ########.fr       */
+/*   Updated: 2021/11/11 20:43:11 by jfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/mandatory/pipex.h"
 
-void	init_pipeline(int argc, char **argv, char **envp, t_pipe *pipeline)
+void	init_pipeline(int argc, char **argv, t_pipe *pipeline)
 {
 	if (argc < 5)
 		print_error(1);
@@ -32,10 +32,10 @@ void	pipex_fork(char **argv, char **envp, t_pipe *pipeline)
 {
 	pipeline->pid_fc = fork();
 	if (pipeline->pid_fc == 0)
-		first_child(pipeline, argv, envp);
+		first_child_process(argv, envp, pipeline);
 	pipeline->pid_sc = fork();
 	if (pipeline->pid_sc == 0)
-		second_child(pipeline, argv, envp);
+		second_child_process(argv, envp, pipeline);
 }
 
 void	close_pipes(t_pipe *pipeline)
