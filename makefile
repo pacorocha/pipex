@@ -9,7 +9,7 @@ SRC = $(FILES)
 OBJECTS = $(SRC:%.c=%.o)
 SRC_ALL = $(addprefix ./src/mandatory/, $(FILES))
 
-CC = clang
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
