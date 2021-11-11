@@ -6,7 +6,7 @@
 /*   By: jfrancis <jfrancis@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:13:28 by jfrancis          #+#    #+#             */
-/*   Updated: 2021/11/10 03:41:38 by jfrancis         ###   ########.fr       */
+/*   Updated: 2021/11/11 03:54:45 by jfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,45 +19,20 @@ char	*get_path_var(char **envp)
 	return (*envp + 5);
 }
 
-static char	*get_cmd_path(char *cmd, char *p_var)
+char	*get_cmd(char **paths, char *cmd)
 {
-	int		i;
-	char	**p_vars;
-	char	*cmd_dup;
-	char	*check_path;
+	char	*tmp;
+	char	*command;
 
-	i = 0;
-	p_vars = ft_split(p_var, ':');
-	cmd_dup = ft_strdup(cmd);
-	while (p_vars[i])
+	while (*paths)
 	{
-		check_path = ft_strjoin(p_vars[i], "/");
-		check_path = ft_append_str(&check_path, cmd);
-		if (!access(check_path, F_OK))
-		{
-			free(cmd_dup);
-			cmd_dup = NULL;
-			return (check_path);
-		}
-		free(check_path);
-		check_path = NULL;
-		++i;
+		tmp = ft_strjoin(*paths, "/");
+		command = ft_strjoin(tmp, cmd);
+		free(tmp);
+		if (access(command, 0) == 0)
+			return (command);
+		free(command);
+		paths++;
 	}
-	return (cmd_dup);
-}
-
-void	pipex_handle_cmds(char **argv, char **envp, t_pipe *pipeline)
-{
-	int		i;
-	char	*p_var;
-
-	i = 0;
-	p_var = get_path_var(envp);
-	while (i < 5)
-	{
-		pipeline->p_argvs[i] = ft_split(argv[i], ' ');
-		pipeline->p_cmds[i] = get_cmd_path(pipeline->p_argvs[i][0], p_var);
-		++i;
-	}
-	pipeline->envp = envp;
+	return (NULL);
 }

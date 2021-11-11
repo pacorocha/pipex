@@ -6,7 +6,7 @@
 /*   By: jfrancis <jfrancis@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 02:15:00 by jfrancis          #+#    #+#             */
-/*   Updated: 2021/11/07 00:32:50 by jfrancis         ###   ########.fr       */
+/*   Updated: 2021/11/11 03:39:42 by jfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	print_error(int id_error)
 		error_msg = "Error while opening file";
 	else if (id_error == 4)
 		error_msg = "Error while forking around";
+	else if (id_error == 5)
+		error_msg = "Error: command not found";
 	ft_putstr_fd(error_msg, 2);
 	write(2, "\n", 1);
 	exit(EXIT_FAILURE);
