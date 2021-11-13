@@ -6,7 +6,7 @@
 /*   By: jfrancis <jfrancis@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 21:41:09 by jfrancis          #+#    #+#             */
-/*   Updated: 2021/11/07 19:00:36 by jfrancis         ###   ########.fr       */
+/*   Updated: 2021/11/13 14:18:20 by jfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
 # include <stdio.h>
 # include <fcntl.h>
 
